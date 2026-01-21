@@ -4,14 +4,16 @@ package Mattiazerbini.entities;
 import jakarta.persistence.*;
 
 import java.time.LocalDate;
+import java.util.UUID;
 
 @Entity
 @Table(name = "persone")
 public class Persona {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    @GeneratedValue
+    @Column(name = "persone_id")
+    private UUID personeId;
 
     @Column(name = "nome", nullable = false, length = 30)
     private String nome;
@@ -43,8 +45,8 @@ public class Persona {
         this.listaPartecipazioni = listaPartecipazioni;
     }
 
-    public long getId() {
-        return id;
+    public UUID getPersoneId() {
+        return personeId;
     }
 
     public String getNome() {

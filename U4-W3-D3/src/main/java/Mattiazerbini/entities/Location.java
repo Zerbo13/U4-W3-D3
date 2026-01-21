@@ -2,14 +2,17 @@ package Mattiazerbini.entities;
 
 import jakarta.persistence.*;
 
+import java.util.UUID;
+
 @Entity
 @Table(name = "location")
 
 public class Location {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    @GeneratedValue
+    @Column(name = "location_id")
+    private UUID locationId;
 
     @Column(name = "nome", nullable = false, length = 30)
     private String nome;
@@ -17,8 +20,16 @@ public class Location {
     @Column(name = "citta", nullable = false, length = 30)
     private String citta;
 
-    public long getId() {
-        return id;
+    public Location(){
+
+    }
+
+    public Location(String nome, String citta){
+        this.nome = nome;
+        this.citta = citta;
+    }
+    public UUID getLocationId() {
+        return locationId;
     }
 
     public String getNome() {
