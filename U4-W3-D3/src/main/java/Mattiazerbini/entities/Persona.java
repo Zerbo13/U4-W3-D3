@@ -4,6 +4,7 @@ package Mattiazerbini.entities;
 import jakarta.persistence.*;
 
 import java.time.LocalDate;
+import java.util.List;
 import java.util.UUID;
 
 @Entity
@@ -30,19 +31,19 @@ public class Persona {
     @Column(name = "sesso", nullable = false, length = 1)
     private String sesso;
 
-    @Column(name = "listaPartecipazioni", nullable = false)
-    private String listaPartecipazioni;
+    @OneToMany(mappedBy = "persona", cascade = CascadeType.ALL)
+    private List<Partecipazione> partecipazioni;
+
 
     public Persona(){
     }
 
-    public Persona(String nome, String cognome, String email, LocalDate dataNascita, String sesso, String listaPartecipazioni){
+    public Persona(String nome, String cognome, String email, LocalDate dataNascita, String sesso){
         this.nome = nome;
         this.cognome = cognome;
         this.email = email;
         this.dataNascita = dataNascita;
         this.sesso = sesso;
-        this.listaPartecipazioni = listaPartecipazioni;
     }
 
     public UUID getPersoneId() {
@@ -89,11 +90,8 @@ public class Persona {
         this.sesso = sesso;
     }
 
-    public String getListaPartecipazioni() {
-        return listaPartecipazioni;
+    public List<Partecipazione> getPartecipazioni(){
+        return partecipazioni;
     }
 
-    public void setListaPartecipazioni(String listaPartecipazioni) {
-        this.listaPartecipazioni = listaPartecipazioni;
     }
-}

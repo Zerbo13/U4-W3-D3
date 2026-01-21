@@ -15,16 +15,25 @@ public class Partecipazione {
     @Column(name = "partecipazione_id")
     private UUID partecipazioneId;
 
+
     @Column(name = "stato", nullable = false, length = 30)
     private String stato;
 
-    public Partecipazione(){
-    }
+    @ManyToOne
+    @JoinColumn(name = "persona_id", nullable = false)
+    private Persona persona;
 
-    public Partecipazione(String stato){
+    @ManyToOne
+    @JoinColumn(name = "evento_id", nullable = false)
+    private Evento evento;
+
+    public Partecipazione() {}
+
+    public Partecipazione(String stato, Persona persona, Evento evento) {
         this.stato = stato;
+        this.persona = persona;
+        this.evento = evento;
     }
-
     public UUID getPartecipazioneId() {
         return partecipazioneId;
     }
