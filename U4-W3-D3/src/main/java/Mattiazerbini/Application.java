@@ -10,6 +10,9 @@ public class Application {
 
         System.out.println("Hello World!");
 
+        var em = emf.createEntityManager();
+
+        em.close();
         emf.close();
     }
 

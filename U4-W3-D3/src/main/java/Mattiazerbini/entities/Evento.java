@@ -4,7 +4,7 @@ import jakarta.persistence.*;
 import java.time.LocalDate;
 
 @Entity
-@Table(name = "evento")
+@Table(name = "eventi")
 
 public class Evento{
 

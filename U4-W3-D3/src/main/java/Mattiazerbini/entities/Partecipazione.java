@@ -3,7 +3,7 @@ package Mattiazerbini.entities;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "partecipazione")
+@Table(name = "partecipazioni")
 
 public class Partecipazione {
 
