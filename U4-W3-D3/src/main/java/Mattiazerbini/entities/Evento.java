@@ -3,6 +3,7 @@ import jakarta.persistence.*;
 
 import java.time.LocalDate;
 import java.util.List;
+import java.util.UUID;
 
 @Entity
 @Table(name = "eventi")
@@ -10,13 +11,11 @@ import java.util.List;
 public class Evento{
 
 
-    @Id // Annotazione OBBLIGATORIA. Dichiaro che questo attributo dovrà
-    // corrispondere alla colonna PRIMARY KEY della tabella students
+    @Id
+    @GeneratedValue
+    @Column(name = "evento_id", updatable = false, nullable = false)
+    private UUID eventoId;
 
-    @GeneratedValue(strategy = GenerationType.IDENTITY)// Annotazione OPZIONALE
-    // però molto consigliata. Serve per chiedere al DB di generare lui
-    // i valori per la PK. IDENTITY significa che invece di biginteger vogliamo usare un bigserial
-    private long id;
 
     @Column(name = "titolo", nullable = false, length = 30)
     private String titolo;
@@ -53,8 +52,8 @@ public class Evento{
         this.location = location;
     }
 
-    public long getId() {
-        return id;
+    public UUID getEventoId() {
+        return eventoId;
     }
 
     public String getTitolo() {
@@ -116,7 +115,7 @@ public class Evento{
     @Override
     public String toString() {
         return "Events{" +
-                "id=" + id +
+                "id=" + eventoId +
                 ", titolo='" + titolo + '\'' +
                 ", dataEvento=" + dataEvento +
                 ", descrizione='" + descrizione + '\'' +

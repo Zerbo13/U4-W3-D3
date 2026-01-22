@@ -12,7 +12,7 @@ public class Partecipazione {
 
     @Id
     @GeneratedValue
-    @Column(name = "partecipazione_id")
+    @Column(name = "partecipazione_id" , updatable = false, nullable = false)
     private UUID partecipazioneId;
 
 

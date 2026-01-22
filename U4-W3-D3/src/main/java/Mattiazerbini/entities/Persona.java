@@ -13,7 +13,7 @@ public class Persona {
 
     @Id
     @GeneratedValue
-    @Column(name = "persone_id")
+    @Column(name = "persone_id" , nullable = false, updatable = false)
     private UUID personeId;
 
     @Column(name = "nome", nullable = false, length = 30)

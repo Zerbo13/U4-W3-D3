@@ -12,7 +12,7 @@ public class Location {
 
     @Id
     @GeneratedValue
-    @Column(name = "location_id")
+    @Column(name = "location_id", updatable = false, nullable = false)
     private UUID locationId;
 
     @Column(name = "nome", nullable = false, length = 30)

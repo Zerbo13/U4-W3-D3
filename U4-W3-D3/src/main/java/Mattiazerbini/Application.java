@@ -22,14 +22,15 @@ public class Application {
         PersonaDAO personaDAO = new PersonaDAO(em);
         PartecipazioneDAO partecipazioneDAO = new PartecipazioneDAO(em);
 
-        // LOCATION
+        // AGGIUNTA LOCATION
         Location location = new Location("Palazzetto dello Sport", "Milano");
         Location location1 = new Location("Stadio Olimpico", "Roma");
 
+        //SALVATAGGIO LOCATION
         locationDAO.save(location);
         locationDAO.save(location1);
 
-        //  EVENTO
+        // AGGIUNTA EVENTO
         Evento evento = new Evento(
                 "Concerto Rock",
                 LocalDate.of(2025, 6, 20),
@@ -48,10 +49,11 @@ public class Application {
                 location
         );
 
+        //SALVATAGGIO EVENTO
         eventoDAO.save(evento);
         eventoDAO.save(evento1);
 
-        //PERSONA
+        // AGGIUNTA PERSONA
         Persona persona = new Persona(
                 "Mario",
                 "Rossi",
@@ -59,12 +61,15 @@ public class Application {
                 LocalDate.of(1995, 3, 15),
                 "M"
         );
+
+        //SALVATAGGIO PERSONA
         personaDAO.save(persona);
 
-        // PARTECIPAZIONE
+        // AGGIUNTA PARTECIPAZIONE
         Partecipazione partecipazione =
                 new Partecipazione("CONFERMATA", persona, evento);
 
+        //SALVATAGGIO PARTECIPAZIONE
         partecipazioneDAO.save(partecipazione);
 
         em.close();
