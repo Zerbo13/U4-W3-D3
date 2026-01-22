@@ -94,4 +94,7 @@ public class Persona {
         return partecipazioni;
     }
 
+    public void setPartecipazioni(List<Partecipazione> partecipazioni) {
+        this.partecipazioni = partecipazioni;
     }
+}

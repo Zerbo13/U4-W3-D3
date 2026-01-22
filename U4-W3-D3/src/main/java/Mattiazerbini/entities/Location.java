@@ -2,6 +2,7 @@ package Mattiazerbini.entities;
 
 import jakarta.persistence.*;
 
+import java.util.List;
 import java.util.UUID;
 
 @Entity
@@ -10,8 +11,6 @@ import java.util.UUID;
 public class Location {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
     @GeneratedValue
     @Column(name = "location_id")
     private UUID locationId;
@@ -22,6 +21,8 @@ public class Location {
     @Column(name = "citta", nullable = false, length = 30)
     private String citta;
 
+    @OneToMany(mappedBy = "location")
+    private List<Evento> eventi;
 
     public Location() {
 
@@ -50,4 +51,12 @@ public class Location {
         public void setCitta (String citta){
             this.citta = citta;
         }
+
+    public List<Evento> getEventi() {
+        return eventi;
     }
+
+    public void setEventi(List<Evento> eventi) {
+        this.eventi = eventi;
+    }
+}

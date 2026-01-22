@@ -45,4 +45,20 @@ public class Partecipazione {
     public void setStato(String stato) {
         this.stato = stato;
     }
+
+    public Persona getPersona() {
+        return persona;
+    }
+
+    public void setPersona(Persona persona) {
+        this.persona = persona;
+    }
+
+    public Evento getEvento() {
+        return evento;
+    }
+
+    public void setEvento(Evento evento) {
+        this.evento = evento;
+    }
 }
