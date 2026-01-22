@@ -22,7 +22,7 @@ public class PersonaDAO {
 
         transaction.commit();
 
-        System.out.println("La persona " +newPersona.getNome()+ "+ stato salvato nel database");
+        System.out.println("La persona " +newPersona.getNome()+ " stato salvato nel database");
     }
 
 }

@@ -22,6 +22,6 @@ public class PartecipazioneDAO {
 
         transaction.commit();
 
-        System.out.println("La partecipazione " +newPartecipazione.getPartecipazioneId()+ "+ stato salvato nel database");
+        System.out.println("La partecipazione " +newPartecipazione.getPartecipazioneId()+ " stato salvato nel database");
     }
 }

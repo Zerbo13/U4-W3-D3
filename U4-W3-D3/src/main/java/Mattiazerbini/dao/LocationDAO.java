@@ -22,6 +22,6 @@ public class LocationDAO {
 
         transaction.commit();
 
-        System.out.println("La location " +newLocation.getNome()+ "+ stato salvato nel database");
+        System.out.println("La location " +newLocation.getNome()+ " stato salvato nel database");
     }
 }

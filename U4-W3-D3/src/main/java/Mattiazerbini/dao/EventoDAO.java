@@ -21,7 +21,7 @@ public class EventoDAO {
 
         transaction.commit();
 
-        System.out.println("L'evento " +newEvento.getTitolo()+ "+ stato salvatonel database");
+        System.out.println("L'evento " +newEvento.getTitolo()+ " stato salvatonel database");
     }
 
 }
